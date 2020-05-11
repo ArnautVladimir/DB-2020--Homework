@@ -133,7 +133,8 @@ SELECT 	MAX(Sum),
 
 	DELETE application FROM application, client
 	WHERE idClient = Client_idClient
-	AND client.idClient IN( SELECT * FROM (SELECT client.idClient FROM client WHERE SUBSTR(client.LastName, 2, 1) IN ('e', 'y', 'u', 'i', 'o', 'a')) AS t);
+	AND client.idClient IN( SELECT * FROM (SELECT client.idClient FROM client 
+	WHERE SUBSTR(client.LastName, 2, 1) IN ('e', 'y', 'u', 'i', 'o', 'a')) AS t);
 
 Знайти львівські відділення, які видали кредитів на загальну суму більше ніж 5000
 
